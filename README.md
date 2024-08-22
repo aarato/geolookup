@@ -15,9 +15,9 @@ git clone https://github.com/aarato/geolookup
 cd geolookup
 # Create and activate virtual environment
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate # or .\venv\Scripts\activate on Windows
 pip3 install -r requirements.txt
-# Create license file with MaxMind API key
+# Create license file with MaxMind API key without the quotes
 echo "My_License_Key_From_Maxmind" > license.txt
 # Update ips.txt files with 1 IP address per line and run the script
 python3 index.py
