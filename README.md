@@ -5,9 +5,15 @@ Geolookup based on GeoLite2 Free Geolocation Data
 Script will print out the geolocation of all IP addresses (1 per line) in the ips.txt file.
 You need to create a license.txt file with a free API key from the [GeoLite2](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data) website.The script will download the up-to-date database from Maxmind automatically, if it is older than 24 hours.
 ```
+# dowload repository
 git clone https://github.com/aarato/geolookup
 cd geolookup
-pip install -r requirements.txt
+# Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
+# Create license file with MaxMind API key
 echo "My_License_Key_From_Maxmind" > license.txt
+# Update ips.txt files with 1 IP address per line and run the script
 python3 index.py
 ```
