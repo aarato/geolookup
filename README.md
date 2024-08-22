@@ -1,5 +1,5 @@
 # Geolookup
-Geolookup based on GeoLite2 Free Geolocation Data. Since the database is on the local drive the lookup is **much faster** and not rate limited like many alternative found online.
+Geolookup based on GeoLite2 Free Geolocation Data. Since the database is on the local drive the lookup is **much faster** and not rate limited like many alternatives found online.
 You need to create a license.txt file with a free API key from the [GeoLite2](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data) website.The script will download the up-to-date database from Maxmind automatically, if it is older than 24 hours.
 
 ## Demo
