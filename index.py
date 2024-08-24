@@ -26,6 +26,7 @@ def lookup_ip(ip_address, asn_mmdb_file, city_mmdb_file):
             # Get ASN information
             asn_response = asn_reader.asn(ip_address)
             asn_org = asn_response.autonomous_system_organization
+            network = asn_response.network
             
             # Get City information
             city_response = city_reader.city(ip_address)
@@ -33,12 +34,12 @@ def lookup_ip(ip_address, asn_mmdb_file, city_mmdb_file):
             city = city_response.city.name
             
             # Output the results
-            print(f'{ip_address},{asn_org},{country},{city}')
+            print(f'{ip_address},{network},{asn_org},{country},{city}')
         
         except geoip2.errors.AddressNotFoundError:
-            print(f'{ip_address},NOT_FOUND,NOT_FOUND,NOT_FOUND')
+            print(f'{ip_address},NOT_FOUND,NOT_FOUND,NOT_FOUND,NOT_FOUND')
         except ValueError:
-            print(f'{ip_address},INVALID,INVALID,INVALID')
+            print(f'{ip_address},INVALID,INVALID,INVALID,INVALID')
 
 # Function to perform the geolookup for a file with multiple IP addresses, 1 per line
 def process_ip_file(ip_file, asn_mmdb_file, city_mmdb_file):
